@@ -49,6 +49,3 @@ pagina_final = 180
 df_tabelas = extrair_tabelas_range_paginas(file_path, pagina_inicial, pagina_final)
 
 comprimir_anexos()
-
-if df_tabelas is not None:
-    print(df_tabelas.head)

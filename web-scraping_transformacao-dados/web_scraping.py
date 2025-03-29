@@ -7,15 +7,11 @@ import urllib.request
 import os
 import zipfile
 
-chrome_options = Options()
-chrome_options.add_argument("--headless")
-chrome_options.add_argument("--no-sandbox")
-
 def obter_link_anexo(driver, anexo_texto):
     WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, f"//a[text()='{anexo_texto}']")))
     return driver.find_element(By.XPATH, f"//a[text()='{anexo_texto}']").get_attribute("href")
 
-def downloads_anexos():
+def downloads_anexos(chrome_options):
     driver = webdriver.Chrome(options=chrome_options)
     url = "https://www.gov.br/ans/pt-br/acesso-a-informacao/participacao-da-sociedade/atualizacao-do-rol-de-procedimentos"
     driver.get(url)
@@ -52,3 +48,11 @@ def comprimir_anexos():
                 if file.lower().endswith('.pdf'):
                     file_path = os.path.join(root, file)
                     zipf.write(file_path, os.path.relpath(file_path, folder_path))
+
+def preparar_dados():
+    chrome_options = Options()
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--no-sandbox")
+
+    downloads_anexos(chrome_options)
+    comprimir_anexos()

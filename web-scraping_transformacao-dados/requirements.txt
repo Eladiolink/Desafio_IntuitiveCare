@@ -1,4 +1,6 @@
 requests
+selenium
 PyPDF2
 pdfplumber
 pandas
+PyPDF2

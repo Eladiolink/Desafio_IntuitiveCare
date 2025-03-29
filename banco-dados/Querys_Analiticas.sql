@@ -1,3 +1,5 @@
+-- Querys analiticas
+
 SELECT 
     o.NOME_FANTASIA,
     SUM(d.VL_SALDO_FINAL - d.VL_SALDO_INICIAL) AS TOTAL_DESPESA

@@ -1,3 +1,15 @@
+/* Arquivo popular as tabelas com os CSV's
+
+   Para não ferir a segurança do MySQL foi 
+   mantido a váriavel "secure_file_priv" o 
+   local onde os arquivos foram colocados é
+   na pasta base de "secure_file_priv"
+
+   obs: caso "secure_file_priv" não estiver localizado no diretorio:
+       "C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/"(Linux por exemplo)
+       alterar o caminho durante o arquivo.
+*/
+
 TRUNCATE TABLE demonstracoes_contabeis;
 TRUNCATE TABLE operadoras_de_plano_de_saude_ativas;
 
@@ -12,9 +24,9 @@ IGNORE 1 ROWS
 (@DATA, @REG_ANS, @CD_CONTA_CONTABIL, @DESCRICAO, @VL_SALDO_INICIAL, @VL_SALDO_FINAL)
 SET 
 	DATA = CASE 
-        WHEN @DATA REGEXP '^[0-9]{4}-[0-9]{2}-[0-9]{2}$' THEN @DATA  -- Já está no formato YYYY-MM-DD
-        WHEN @DATA REGEXP '^[0-9]{2}/[0-9]{2}/[0-9]{4}$' THEN STR_TO_DATE(@DATA, '%d/%m/%Y') -- Formato DD/MM/YYYY
-        WHEN @DATA REGEXP '^[0-9]{2}-[0-9]{2}-[0-9]{4}$' THEN STR_TO_DATE(@DATA, '%d-%m-%Y') -- Formato DD-MM-YYYY
+        WHEN @DATA REGEXP '^[0-9]{4}-[0-9]{2}-[0-9]{2}$' THEN @DATA
+        WHEN @DATA REGEXP '^[0-9]{2}/[0-9]{2}/[0-9]{4}$' THEN STR_TO_DATE(@DATA, '%d/%m/%Y')
+        WHEN @DATA REGEXP '^[0-9]{2}-[0-9]{2}-[0-9]{4}$' THEN STR_TO_DATE(@DATA, '%d-%m-%Y')
         ELSE NULL 
     END,
 	REG_ANS = NULLIF(TRIM(@REG_ANS), ''),

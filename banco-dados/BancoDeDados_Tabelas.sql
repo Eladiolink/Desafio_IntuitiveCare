@@ -1,3 +1,5 @@
+-- Arquivo para criar o banco de dados e as tabelas
+
 CREATE DATABASE IF NOT EXISTS ANS;
 USE ANS;
 

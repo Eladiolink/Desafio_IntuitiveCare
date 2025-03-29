@@ -1,5 +1,6 @@
 from app.models.operadora_model import OperadoraModel
 import pandas as pd
+import numpy as np
 
 class BuscarService:
     """Serviço responsável pela lógica de busca"""
@@ -31,4 +32,10 @@ class BuscarService:
                         resultados.append(row.to_dict())
                         break  # Evita múltiplas adições da mesma linha
 
+        resultados =  [
+                        {key: (None if isinstance(value, float) and np.isnan(value) else value) for key, value in item.items()}
+                        for item in resultados
+                    ]
+        
+        print(resultados)
         return resultados

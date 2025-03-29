@@ -5,7 +5,8 @@ class OperadoraModel:
 
     # Carrega os dados do CSV
     df = pd.read_csv("Relatorio_cadop.csv", sep=";")
-    
+    df = df.where(pd.notna(df), None)
+
     # Remove espaços extras nos nomes das colunas
     df.columns = df.columns.str.strip()
 

@@ -1,0 +1,58 @@
+{
+	"info": {
+		"_postman_id": "d151667d-6d01-4d48-abeb-44be49c44028",
+		"name": "Operadoras Registro Ativo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43574520",
+		"_collection_link": "https://galactic-satellite-3716025.postman.co/workspace/El%C3%A1dio-Leal's-Workspace~1b8bbaa4-d0ca-43a6-8dbc-a3fc7a7d64d1/collection/43574520-d151667d-6d01-4d48-abeb-44be49c44028?action=share&source=collection_link&creator=43574520"
+	},
+	"item": [
+		{
+			"name": "Busca /Coluna/Filtro",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/buscar/Cidade/São Paulo",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"buscar",
+						"Cidade",
+						"São Paulo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Busca /Filtro",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/buscar/Sao Paulo",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"buscar",
+						"Sao Paulo"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

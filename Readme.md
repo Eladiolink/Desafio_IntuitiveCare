@@ -71,6 +71,6 @@ Projeto front-end e back-end para uma aplicação web de consulta de dados cadas
    ```
 2. Rodar o servidor em modo de desenvolvimento:
    ```sh
-   npm run serve
+   npm run dev
    ```
 

@@ -1,4 +1,4 @@
-# Projeto de Consulta de Dados das Operadoras Ativas na ANS
+# Teste IntuitiveCare
 
 Este projeto contém scripts para criação de banco de dados, web scraping e transformação de dados, além de uma aplicação web para consulta de dados cadastrais das Operadoras Ativas na ANS.
 
